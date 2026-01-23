@@ -11,5 +11,6 @@ public class PlayerController : MonoBehaviour
        m_CellPosition = cell;
 
        //let's move to the right position...
+       transform.position = m_Board.CellToWorld(cell);
    }
 }
