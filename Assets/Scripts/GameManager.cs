@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public BoardManager BoardManager;
     public PlayerController PlayerController;
 
-    private TurnManager m_TurnManager;
+    public TurnManager TurnManager { get; private set; }
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        m_TurnManager = new TurnManager();
+        TurnManager = new TurnManager();
 
         BoardManager.Init();
         PlayerController.Spawn(BoardManager, new Vector2Int(1, 1));
