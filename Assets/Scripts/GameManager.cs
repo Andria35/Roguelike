@@ -2,17 +2,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public BoardManager BoardManager;
-   public PlayerController PlayerController;
+    public static GameManager Instance { get; private set; }
 
-   private TurnManager m_TurnManager;
-  
-   // Start is called once before the first execution of Update after the MonoBehaviour is created
-   void Start()
-   {
-       m_TurnManager = new TurnManager();
-      
-       BoardManager.Init();
-       PlayerController.Spawn(BoardManager, new Vector2Int(1,1));
-   }
+    public BoardManager BoardManager;
+    public PlayerController PlayerController;
+
+    private TurnManager m_TurnManager;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+    void Start()
+    {
+        m_TurnManager = new TurnManager();
+
+        BoardManager.Init();
+        PlayerController.Spawn(BoardManager, new Vector2Int(1, 1));
+    }
 }
