@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         m_FoodLabel.text = "Food : " + m_FoodAmount;
 
         BoardManager.Init();
-        PlayerController.Spawn(BoardManager, new Vector2Int(1, 1));
+        PlayerController.Spawn(BoardManager, new Vector2Int(4, 4));
     }
 
     void OnTurnHappen()
