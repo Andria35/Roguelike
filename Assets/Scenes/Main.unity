@@ -642,6 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   BoardManager: {fileID: 935106781}
   PlayerController: {fileID: 823975225}
+  UIDoc: {fileID: 358232412}
 --- !u!4 &2039594906
 Transform:
   m_ObjectHideFlags: 0
